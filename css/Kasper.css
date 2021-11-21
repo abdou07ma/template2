@@ -1,0 +1,259 @@
+/* Start Variables */
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+}
+/* End Variables */
+
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: black;
+}
+ul {
+  list-style: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+
+/* Start Header */
+
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 97px;
+}
+
+header .container::after {
+  content: "";
+  position: absolute;
+  background-color: #a2a2a2;
+  height: 1px;
+  bottom: 0;
+  width: calc(100% - 30px);
+  left: 15px;
+}
+
+header .logo img {
+  height: 40px;
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav .toggle-menu {
+  color: white;
+  font-size: 20px;
+}
+
+@media (min-width: 767px) {
+  header nav .toggle-menu {
+    display: none;
+  }
+}
+header nav .toggle-menu:hover + ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a {
+  padding: 15px !important;
+}
+
+header nav ul {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  header nav ul {
+    display: none;
+  }
+}
+
+header nav ul li a {
+  padding: 40px 10px;
+  display: block;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+header nav .form {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  margin-left: 30px;
+  border-left: 1px solid white;
+}
+header nav .form i {
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+/* End Header */
+
+/* Star leanding */
+
+.leandig {
+  min-height: 100vh;
+  background-color: #1f2021;
+  background-image: url(/image/landing2.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.leandig .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.leandig .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 50%;
+  color: white;
+  padding: 40px;
+  transform: translateY(-50%);
+  background-color: var(--transparent-color);
+  display: flex;
+  justify-content: flex-end;
+}
+.leandig .text .content {
+  max-width: 500px;
+}
+
+@media (max-width: 767px) {
+  .leandig .text {
+    width: 100%;
+  }
+
+  leandig .text .content {
+    max-width: 100%;
+  }
+}
+
+.leandig .text .content h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.leandig .text p {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.leandig .change-background {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .leandig .change-background {
+    display: none;
+  }
+}
+
+.leandig .fa-angle-left {
+  left: 30px;
+}
+
+.leandig .fa-angle-right {
+  right: 30px;
+}
+
+.leandig .bullets {
+  position: absolute;
+  left: 50%;
+  transform: translateY(-50%);
+  bottom: 30px;
+  display: flex;
+}
+
+.leandig .bullets li {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.leandig .bullets li.active {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+/* End leanding */
